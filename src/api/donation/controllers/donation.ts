@@ -2,6 +2,8 @@ import { factories } from "@strapi/strapi";
 
 const donationAPI = "api::donation.donation"
 
+const recipientPhoneNumber = "+254798356532"
+
 export default factories.createCoreController(
     donationAPI,
     ({ strapi }) => ({
@@ -9,8 +11,8 @@ export default factories.createCoreController(
             console.log("Create Donations")
             // Send an SMS to thank the sponsor
             strapi.service(donationAPI).africasTalkingSendSMS({
-                recipientPhoneNumber: "+254798356532",
-                message: "Thanks for your donation"
+                recipientPhoneNumber: "",
+                message: "Happiness is giving it away. The more you give the more you receive, thank you for your generous donation"
 
             });
 
